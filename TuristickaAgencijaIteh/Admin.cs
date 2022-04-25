@@ -4,7 +4,7 @@ namespace Domain
 {
     public class Admin:Korisnik
     {
-        public Uloga Uloga { get; set; }
+        public DateTime DatumZaposlenja { get; set; }
 
     }
 }

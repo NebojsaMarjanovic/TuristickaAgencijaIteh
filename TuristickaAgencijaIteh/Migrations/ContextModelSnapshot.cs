@@ -282,8 +282,8 @@ namespace Domain.Migrations
                 {
                     b.HasBaseType("Domain.Korisnik");
 
-                    b.Property<int>("Uloga")
-                        .HasColumnType("int");
+                    b.Property<DateTime>("DatumZaposlenja")
+                        .HasColumnType("datetime2");
 
                     b.ToTable("Admins");
                 });

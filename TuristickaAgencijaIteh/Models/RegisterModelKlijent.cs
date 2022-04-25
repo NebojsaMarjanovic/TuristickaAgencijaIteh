@@ -7,8 +7,16 @@ using System.Threading.Tasks;
 
 namespace Domain.Models
 {
-    public class RegisterModel
+    public class RegisterModelKlijent
     {
+       
+
+        [Required(ErrorMessage = "Ime is required")]
+        public string Ime { get; set; }
+
+        [Required(ErrorMessage = "Prezime is required")]
+        public string Prezime { get; set; }
+
         [Required(ErrorMessage = "Username is required")]
         public string Username { get; set; }
 
@@ -17,5 +25,9 @@ namespace Domain.Models
 
         [Required(ErrorMessage = "Password is required")]
         public string Password { get; set; }
+
+
+        [Phone]
+        public string BrTelefona { get; set; }
     }
 }
