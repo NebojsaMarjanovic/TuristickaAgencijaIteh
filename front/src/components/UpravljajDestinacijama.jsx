@@ -30,6 +30,7 @@ function UpravljajDestinacijama() {
 				<table className="tabelaDestinacije">
 					<tbody>
 						<tr>
+							<th></th>
 							<th>Naziv naslov</th>
 							<th>Nesto 1 naslov</th>
 							<th>Nesto 2 naslov</th>
@@ -45,11 +46,13 @@ function UpravljajDestinacijama() {
 						))}
 						</tr>
 						<tr>
+							<td><input type="radio" value = "radio1" name = "radiobutton"/></td>
 							<td>Naziv dva</td>
 							<td> nesto 1</td>
 							<td> nesto 2</td>
 						</tr>
 						<tr>
+							<td><input type="radio" value = "radio2" name = "radiobutton"/></td>
 							<td>Drugi naziv</td>
 							<td> nesto 1</td>
 							<td> nesto 2</td>
