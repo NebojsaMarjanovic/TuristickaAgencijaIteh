@@ -1,5 +1,6 @@
 ﻿using DataAccessLayer.Interfaces;
 using Domain;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,6 +21,12 @@ namespace DataAccessLayer.Implementations
         }
         public void Add(Rezervacija entity)
         {
+            var grad = context.Gradovi.SingleOrDefault(g => g.GradId == entity.GradId);
+            grad.Rezervacije.Add(entity);
+            entity.Grad = grad;
+            var korisnik = context.Korisnici.SingleOrDefault(k => k.Id == entity.KorisnikId);
+            korisnik.Rezervacije.Add(entity);
+            entity.Korisnik = korisnik;
             context.Rezervacije.Add(entity);
         }
 
@@ -30,7 +37,8 @@ namespace DataAccessLayer.Implementations
 
         public List<Rezervacija> GetAll()
         {
-            return context.Rezervacije.ToList();
+            var rezervacije= context.Rezervacije.Include(r => r.Grad).Include(r => r.Korisnik).ToList();
+            return rezervacije;
         }
 
         public Rezervacija SearchById(Rezervacija entity)

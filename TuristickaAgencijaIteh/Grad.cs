@@ -15,7 +15,7 @@ namespace Domain
         public string Valuta { get; set; }
         public string Opis { get; set; }
         public double Cena { get; set; }
-        public List<Rezervacija> Rezervacije { get; set; }
+        public List<Rezervacija> Rezervacije { get; set; } = new List<Rezervacija>();
 
     }
 }

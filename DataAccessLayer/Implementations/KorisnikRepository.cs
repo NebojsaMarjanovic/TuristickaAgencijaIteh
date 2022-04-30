@@ -1,5 +1,6 @@
 ﻿using DataAccessLayer.Interfaces;
 using Domain;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -36,7 +37,7 @@ namespace DataAccessLayer.Implementations
 
         public Korisnik SearchById(Korisnik entity)
         {
-            return context.Users.Single(u => u.Id == entity.Id);
+            return context.Users.Include(k=>k.Rezervacije).Single(u => u.Id == entity.Id);
         }
 
         public List<Korisnik> SerachBy(Expression<Func<Korisnik, bool>> predicate)

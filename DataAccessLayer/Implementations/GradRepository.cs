@@ -1,5 +1,6 @@
 ﻿using DataAccessLayer.Interfaces;
 using Domain;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -32,7 +33,8 @@ namespace DataAccessLayer.Implementations
 
         public List<Grad> GetAll()
         {
-            return context.Gradovi.ToList();
+            var gradovi = context.Gradovi.Include(g=>g.Rezervacije).ToList();
+            return gradovi;
         }
 
         public Grad SearchById(Grad entity)

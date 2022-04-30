@@ -12,7 +12,7 @@ namespace Domain
     {
         public string Ime { get; set; }
         public string Prezime { get; set; }
-        public List<Rezervacija> Rezervacije { get; set; }
+        public List<Rezervacija> Rezervacije { get; set; } = new List<Rezervacija>();
 
 
     }
