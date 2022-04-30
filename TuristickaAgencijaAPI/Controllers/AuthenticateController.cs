@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
+using Swashbuckle.AspNetCore.Annotations;
 using System;
 using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
@@ -36,7 +37,7 @@ namespace TuristickaAgencijaAPI.Controllers
         }
 
 
-
+        [SwaggerOperation(Summary = "Registrovanje klijenta")]
         [HttpPost]
         [Route("register")]
         public async Task<IActionResult> Register([FromBody] RegisterModelKlijent model)
@@ -68,7 +69,7 @@ namespace TuristickaAgencijaAPI.Controllers
             return Ok(new Response { Status = "Success", Message = "User created successfully!" });
         }
 
-
+        [SwaggerOperation(Summary = "Registrovanje admina")]
         [HttpPost]
         [Route("register - admin")]
         public async Task<IActionResult> RegisterAdmin([FromBody] RegisterModelAdmin model)
@@ -104,6 +105,7 @@ namespace TuristickaAgencijaAPI.Controllers
             return Ok(new Response { Status = "Success", Message = "User created successfully!" });
         }
 
+        [SwaggerOperation(Summary = "Login korisnika (klijenta/admina)")]
         [HttpPost]
         [Route("login")]
         public async Task<IActionResult> Login([FromBody] LoginModel model)

@@ -3,6 +3,8 @@ using Domain;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Swashbuckle.AspNetCore.Annotations;
+using System.Collections.Generic;
 
 namespace TuristickaAgencijaAPI.Controllers
 {
@@ -17,12 +19,17 @@ namespace TuristickaAgencijaAPI.Controllers
             this.unitOfWork = unitOfWork;
         }
 
-        [Authorize(Roles ="Admin")]
+
+        [SwaggerOperation(Summary = "Prikaz svih gradove")]
+        //[Authorize(Roles ="Admin")]
         [HttpGet]
-        public IActionResult GetGradovi()
+        public List<Grad> GetGradovi()
         {
-            return Ok(unitOfWork.GradRepository.GetAll());
+            return unitOfWork.GradRepository.GetAll();
         }
+
+
+        [SwaggerOperation(Summary = "Dodavanje novog grada")]
         [HttpPost]
         public IActionResult AddGrad(Grad grad)
         {
@@ -31,6 +38,8 @@ namespace TuristickaAgencijaAPI.Controllers
 
             return Ok();
         }
+
+        [SwaggerOperation(Summary = "Prikaz grada sa datim identifikatorom")]
         [HttpGet("{id}")]
         public IActionResult GetGrad(int id)
         {
@@ -38,6 +47,8 @@ namespace TuristickaAgencijaAPI.Controllers
             var grad = new Grad { GradId = id };
             return Ok(unitOfWork.GradRepository.SearchById(grad));
         }
+
+        [SwaggerOperation(Summary = "Azuriranje grada")]
         [HttpPut]
         public IActionResult UpdateGrad(Grad grad)
         {
@@ -46,6 +57,7 @@ namespace TuristickaAgencijaAPI.Controllers
             return Ok();
         }
 
+        [SwaggerOperation(Summary = "Brisanje grada")]
         [HttpDelete("{id}")]
         public IActionResult DeleteGrad(int id)
         {

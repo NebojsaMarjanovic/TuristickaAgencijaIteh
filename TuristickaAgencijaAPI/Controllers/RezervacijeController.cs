@@ -3,6 +3,7 @@ using Domain;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Swashbuckle.AspNetCore.Annotations;
 using System.Linq;
 
 namespace TuristickaAgencijaAPI.Controllers
@@ -18,11 +19,14 @@ namespace TuristickaAgencijaAPI.Controllers
             this.unitOfWork = unitOfWork;
         }
 
+        [SwaggerOperation(Summary = "Prikaz svih rezervacija")]
         [HttpGet]
         public IActionResult GetRezervacije()
         {
             return Ok(unitOfWork.RezervacijeRepository.GetAll());
         }
+
+        [SwaggerOperation(Summary = "Dodavanje rezervacija")]
         [HttpPost]
         public IActionResult AddRezervacija(Rezervacija rezervacija)
         {
@@ -32,7 +36,17 @@ namespace TuristickaAgencijaAPI.Controllers
 
             return Ok();
         }
-        
-       
+
+        [SwaggerOperation(Summary = "Prikaz svih rezervacija za datog korisnika")]
+        [HttpGet("{id}")]
+        public IActionResult GetRezervacijeKorisnika(string id)
+        {
+            var temp = new Korisnik { Id = id };
+            var korisnik = unitOfWork.KorisnikRepository.SearchById(temp);
+
+            var rezervacije = korisnik.Rezervacije;
+
+            return Ok(rezervacije);
+        }
     }
 }

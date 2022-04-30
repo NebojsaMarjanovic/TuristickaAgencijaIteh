@@ -78,6 +78,17 @@ namespace TuristickaAgencijaAPI
                 };
             });
 
+            services.AddCors(options =>
+            {
+                options.AddDefaultPolicy(
+                    builder =>
+                    {
+                        builder.AllowAnyOrigin()
+                                     .AllowAnyMethod()
+                                     .AllowAnyHeader();
+                    });
+            });
+
 
             services.AddSwaggerGen(swagger =>
             {
@@ -85,7 +96,7 @@ namespace TuristickaAgencijaAPI
                 swagger.SwaggerDoc("v1", new OpenApiInfo
                 {
                     Version = "v1",
-                    Title = "ASP.NET 5 Web API",
+                    Title = "API Dokumentacija Turisticke agencije",
                     Description = "Authentication and Authorization in ASP.NET 5 with JWT and Swagger"
                 });
                 // To Enable authorization using Swagger (JWT)
@@ -112,7 +123,10 @@ namespace TuristickaAgencijaAPI
                     new string[] {}
                      }
                 });
+                swagger.EnableAnnotations();
+
             });
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -128,6 +142,7 @@ namespace TuristickaAgencijaAPI
             app.UseHttpsRedirection();
 
             app.UseRouting();
+            app.UseCors();
 
             app.UseCors("NotesPolicy");
             app.UseAuthentication();

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "3NtYcHM6uuZJQIJCOgQgG38+Ssi/XMc71T2f9973mFF9kSJZ61faX+RoBbl92n9GwPN7HM7VQr1qjQFgkeEb1w==",
+  "dgSpecHash": "42rLbuyQXlH1mspTsviLjBgJbSAaR1Sc5X6DrIe9aFpQ0l4RLiLI52FnOTcwAM+isSU4CDXxgLADi/95tIxEqw==",
   "success": true,
   "projectFilePath": "C:\\Users\\Korisnik\\source\\repos\\TuristickaAgencijaIteh\\TuristickaAgencijaAPI\\TuristickaAgencijaAPI.csproj",
   "expectedPackageFiles": [
@@ -60,6 +60,7 @@
     "C:\\Users\\Korisnik\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
     "C:\\Users\\Korisnik\\.nuget\\packages\\runtime.native.system\\4.3.0\\runtime.native.system.4.3.0.nupkg.sha512",
     "C:\\Users\\Korisnik\\.nuget\\packages\\swashbuckle.aspnetcore\\5.6.3\\swashbuckle.aspnetcore.5.6.3.nupkg.sha512",
+    "C:\\Users\\Korisnik\\.nuget\\packages\\swashbuckle.aspnetcore.annotations\\5.0.0\\swashbuckle.aspnetcore.annotations.5.0.0.nupkg.sha512",
     "C:\\Users\\Korisnik\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\5.6.3\\swashbuckle.aspnetcore.swagger.5.6.3.nupkg.sha512",
     "C:\\Users\\Korisnik\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\5.6.3\\swashbuckle.aspnetcore.swaggergen.5.6.3.nupkg.sha512",
     "C:\\Users\\Korisnik\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\5.6.3\\swashbuckle.aspnetcore.swaggerui.5.6.3.nupkg.sha512",

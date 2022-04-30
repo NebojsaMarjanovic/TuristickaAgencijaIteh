@@ -65,3 +65,4 @@ C:\Users\Korisnik\source\repos\TuristickaAgencijaIteh\TuristickaAgencijaAPI\obj\
 C:\Users\Korisnik\source\repos\TuristickaAgencijaIteh\TuristickaAgencijaAPI\obj\Debug\net5.0\TuristickaAgencijaAPI.pdb
 C:\Users\Korisnik\source\repos\TuristickaAgencijaIteh\TuristickaAgencijaAPI\obj\Debug\net5.0\TuristickaAgencijaAPI.genruntimeconfig.cache
 C:\Users\Korisnik\source\repos\TuristickaAgencijaIteh\TuristickaAgencijaAPI\obj\Debug\net5.0\ref\TuristickaAgencijaAPI.dll
+C:\Users\Korisnik\source\repos\TuristickaAgencijaIteh\TuristickaAgencijaAPI\bin\Debug\net5.0\Swashbuckle.AspNetCore.Annotations.dll
